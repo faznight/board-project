@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доска объявлений</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="logo">Board<span>.</span></h1>
+
+            <nav class="navigation">
+                <a href="/" class="active">Главная</a>
+                <a href="#" id="myAdsLink">Мои объявления</a>
+            </nav>
+
+            <div class="user-actions">
+                <span id="username"></span>
+                <button id="logoutButton" class="button button-outline">
+                    Выйти
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div>
+                <h2>Найди то, что ищешь.</h2>
+                <p>Покупай, продавай и находи интересные предложения.</p>
+            </div>
+
+            <button id="openCreateForm" class="button button-primary">
+                + Разместить объявление
+            </button>
+        </section>
+
+        <section class="search-section">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Поиск объявлений..."
+            >
+
+            <select id="categoryFilter">
+                <option value="">Все категории</option>
+            </select>
+
+            <select id="sortSelect">
+                <option value="newest">Сначала новые</option>
+                <option value="oldest">Сначала старые</option>
+                <option value="price_asc">Сначала дешевле</option>
+                <option value="price_desc">Сначала дороже</option>
+            </select>
+
+            <button id="searchButton" class="button button-primary">
+                Найти
+            </button>
+        </section>
+
+        <section id="createForm" class="form-section hidden">
+            <h2>Новое объявление</h2>
+
+            <form id="adForm">
+                <input
+                    type="text"
+                    id="adTitle"
+                    placeholder="Название объявления"
+                    required
+                >
+
+                <textarea
+                    id="adDescription"
+                    placeholder="Описание"
+                    required
+                ></textarea>
+
+                <input
+                    type="number"
+                    id="adPrice"
+                    placeholder="Цена"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+                <select id="adCategory" required>
+                    <option value="">Выберите категорию</option>
+                </select>
+
+                <button type="submit" class="button button-primary">
+                    Опубликовать
+                </button>
+            </form>
+        </section>
+
+        <section class="ads-section">
+            <h2 id="adsHeading">Все объявления</h2>
+
+            <div id="adsContainer" class="ads-grid">
+                <p>Загрузка объявлений...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

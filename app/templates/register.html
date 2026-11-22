@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация — Board</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        <div class="auth-card">
+
+            <h1 class="logo">Board<span>.</span></h1>
+            <h2>Создать аккаунт</h2>
+            <p>Зарегистрируйтесь, чтобы размещать объявления.</p>
+
+            <form id="registerForm">
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Имя пользователя (от 3 символов)"
+                    minlength="3"
+                    maxlength="50"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Пароль (от 8 символов)"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit" class="button button-primary">
+                    Зарегистрироваться
+                </button>
+            </form>
+
+            <p id="errorMessage" class="error-message"></p>
+
+            <p class="auth-link">
+                Уже есть аккаунт?
+                <a href="/login">Войти</a>
+            </p>
+
+        </div>
+    </main>
+
+    <script src="/static/js/register.js"></script>
+</body>
+</html>
