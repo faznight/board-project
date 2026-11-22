@@ -78,7 +78,7 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-4. Установить необходимые библиотеки:
+4. pip install fastapi uvicorn sqlalchemy alembic jinja2 python-multipart itsdangerous python-dotenv:
 
 ```bash
 pip install fastapi uvicorn sqlalchemy alembic jinja2 python-multipart itsdangerous
