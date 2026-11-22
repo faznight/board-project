@@ -3,10 +3,13 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 from fastapi.responses import FileResponse
+import os
+from dotenv import load_dotenv
 
 from app.routers.auth import router as auth_router
 from app.routers.categories import router as categories_router
 from app.routers.ads import router as ads_router
+load_dotenv()
 app = FastAPI(
     title="Доска объявлений",
     description="Учебный проект — вариант 16",
@@ -17,7 +20,7 @@ app = FastAPI(
 app.add_middleware(
     
     SessionMiddleware,
-    secret_key="change-this-secret-key-before-deployment"
+    secret_key=os.getenv("SECRET_KEY")
 )
 
 app.include_router(auth_router)
